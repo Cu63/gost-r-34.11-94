@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include "../header/hash.hpp"
 
-void test1(uint8_t h[]) {
+void test1(uint8_t h[],int n, int steps) {
     uint8_t *buf;
     uint8_t *newHash;
     int len;
@@ -15,7 +15,7 @@ void test1(uint8_t h[]) {
     buf = new uint8_t[kBufferSize];
     newHash = new uint8_t[kBlockSize];
 
-    for (i = 0; i < 1000; i++) {
+    for (i = 0; i < steps; i++) {
         unsigned int step = 0;
         bool key = true;
         while(key) {
@@ -24,7 +24,7 @@ void test1(uint8_t h[]) {
             memset(newHash, 0, kBlockSize);
 
             hash(buf, len, newHash);
-            if (compareHash(newHash, h, 8))
+            if (compareHash(newHash, h, n))
                 key = false;
         }
         std::cout << std::dec << avgStep / (i + 1) << std::endl;

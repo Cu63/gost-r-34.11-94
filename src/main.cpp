@@ -25,7 +25,7 @@ int main() {
         std::cout << std::hex << (int)hashed[i];
     std::cout << std::endl;
     std::cout << "Make test1...\n";
-//    test1(hashed);
+//    test1(hashed, 8, 1000);
     test2(8, 100);
     return 0;
 }

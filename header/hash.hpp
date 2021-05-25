@@ -36,7 +36,7 @@ void E_f(uint8_t A[], uint8_t K[], uint8_t R[]);
 void psi(uint8_t arr[]);
 void psi(uint8_t arr[], int p);
 
-void test1(uint8_t hash[]);
+void test1(uint8_t hash[],int n, int steps);
 void test2(int n, int steps);
 int generateString(uint8_t buf[]);
 bool compareHash(const uint8_t a[], const uint8_t b[], int n);
